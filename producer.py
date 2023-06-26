@@ -1,3 +1,5 @@
+#This script pulls request to two APIs: One to get the cities latitude and longitude, the other to get the current weather based on the latitude and longitude. Thus we have 2 API keys.
+
 import time
 import requests
 from datetime import datetime
@@ -7,8 +9,8 @@ import logging
 import os
 
 def etl():
-    city_api_key = "d7Qo4kY4Mf+OOgehs8qEYw==b3xQE8f6NRdmR2DV"
-    meteo_api_key = "c595574d1e5647d87599ff402148b77a"
+    city_api_key = {YOUR_CITY_API_KEY}
+    meteo_api_key = {YOUR_METEO_API_KEY}
     european_capitals = ["Paris", "Berlin", "Amsterdam", "Moscow", "Madrid", "London"]
 
     producer = Producer({
