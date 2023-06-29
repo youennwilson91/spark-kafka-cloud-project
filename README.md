@@ -3,7 +3,7 @@
 ### Introduction 
 This is my first project. The goal is to build a pipeline that fetches climate information on european cities, send it to kafka and retrieve it before storing it. The pipeline will be pushed to the cloud using an EC2 machine that runs spark and act both as a message producer and consumer. Kafka will be hosted on a MSK cluster. Data will be stored on s3. This pipeline was build for practice purposes only and there won't be any transformation made on the data since I already know how spark.sql works.
 
-The next pipeline I will build will modify this one by introducing an EMR machine to act as a spark consumer (since it is more suitable). I will store the data into AVRO or Parquet format since it is more suitable for complex data types, schema evolution and splittability. I will also use AWS Kinesis to buffer the data in order to handle large data workloads.
+The next pipeline I will build will modify this one by introducing AWS Glue. I will store the data into AVRO or Parquet format since it is more suitable for complex data types, schema evolution and splittability. I will also use AWS Kinesis to buffer the data in order to handle large data workloads.
 
 ### Setting up the environment
 For information on how to set up an MSK cluster and connect it to an EC2 instance, check the following video: https://www.youtube.com/watch?v=5WaIgJwYpS8
