@@ -7,8 +7,8 @@ import logging
 
 
 
-city_api_key = "d7Qo4kY4Mf+OOgehs8qEYw==b3xQE8f6NRdmR2DV"
-meteo_api_key = "c595574d1e5647d87599ff402148b77a"
+city_api_key = "YOUR_NINJA_API_KEY"
+meteo_api_key = "YOUR_OPENWEATHER_API_KEY"
 european_capitals = [
     "Andorra la Vella", "Tirana", "Vienna", "Minsk", "Brussels", "Sarajevo",
     "Sofia", "Zagreb", "Nicosia", "Prague", "Copenhagen", "Tallinn",
@@ -54,7 +54,7 @@ def get_weather_data(latitude, longitude, endpoint, meteo_api_key):
         return None
 
 producer = Producer({
-        "bootstrap.servers": "b-1.cluster1.8sekeq.c3.kafka.eu-west-3.amazonaws.com:9092, b-2.cluster1.8sekeq.c3.kafka.eu-west-3.amazonaws.com:9092",
+        "bootstrap.servers": "[your_broker1_adress]:9092, [your_broker2_adress]:9092",
         "acks": "all",
         "retries": "5"
     })
