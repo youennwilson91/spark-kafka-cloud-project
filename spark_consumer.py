@@ -6,7 +6,7 @@ import os
 
 spark = SparkSession.builder \
         .appName("meteo_pipeline") \
-        .master("spark://35.180.124.171:7077") \
+        .master("spark://[your_master_machine_ip]:7077") \
         .config("spark.executor.instances", "2") \
         .getOrCreate()
 
@@ -36,8 +36,8 @@ base_3 = base_2.select("data.*") #We can then select everything from the datafra
 query_2 = base_3.writeStream\
     .outputMode("append")\
     .format("csv")\
-    .option("path", "s3a://sewa-meteo-bucket-1/files/")\
-    .option("checkpointLocation", "s3a://sewa-meteo-bucket-1/checkpoint")\
+    .option("path", "s3a://your_bucket_folder/")\
+    .option("checkpointLocation", "s3a://your_bucket_checkpoint_folder")\
     .start()
 
 query_2.awaitTermination()
